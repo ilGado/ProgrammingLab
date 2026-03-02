@@ -5,8 +5,8 @@ def countCharacter(word, charac):
     
     counter = 0
     
-    for x in word:
-        if x == charac:
+    for x in word.upper():
+        if x == charac.upper():
             counter += 1
             
     return counter

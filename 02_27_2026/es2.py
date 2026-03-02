@@ -1,10 +1,10 @@
 #Scrivere un programma che chiede all’utente un numero intero e stampa il suo quadrato e il suo cubo
 
 def getSquare(n):
-    return n*n
+    return n**2
 
 def getCube(n):
-    return n*n*n
+    return n**3
 
 
 number = input("Please insert a number: ")
