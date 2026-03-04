@@ -1,0 +1,1 @@
+return {label: value for label, value in zip(positions, array)}
