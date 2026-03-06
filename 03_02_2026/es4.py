@@ -8,11 +8,9 @@ def isInArr(a1, a2):
     
     for element1 in a1:
         
-        for element2 in a2:
-            
-            if element1 == element2:
-                toReturn = 1 #True: at least one element is in both arrays
-                break
+        if element1 in a2:
+            toReturn = 1 #True: at least one element is in both arrays
+            break
     
     return toReturn
 

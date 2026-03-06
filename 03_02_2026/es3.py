@@ -5,9 +5,10 @@ import randomArray
 def changePositions(array, i, j):   #passa i parametri per riferimento (almeno le liste)
     
     if i != j and i >= 0 and j >= 0 and i <= len(array) and j <= len(array):
-        tmp = array[i]
-        array[i] = array[j]
-        array[j] = tmp
+        #tmp = array[i]
+        #array[i] = array[j]
+        #array[j] = tmp
+        array[i], array[j] = array[j], array[i]
         return 1
     
     else: 
