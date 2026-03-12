@@ -25,3 +25,5 @@ class Studente(ps.Persona):
             
         else:
             print(f"Non frequenti il corso {toRem}")
+            
+    

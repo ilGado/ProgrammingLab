@@ -15,7 +15,19 @@ if __name__ == "__main__":
     
     insegnante.rimuoviCorso("Analisi 2")
     insegnante.saluta()
-    baffo.aggiungiCorso("Geometria")
+    baffo.aggiungiCorso("Analisi 1")
     baffo.rimuoviCorso("Letteratura")
     baffo.saluta()
     
+    insegnante.sonoProfessore(baffo.corsi)
+    insegnante.sonoProfessore(studente.corsi)
+    
+    if insegnante.isProf(baffo.corsi):
+        print(f"Tutti i corsi di questo studente hanno un docente")
+    else: 
+        print(f"Non tutti i corsi di questo studente hanno un docente")
+        
+    if insegnante.isProf(studente.corsi):
+        print(f"Tutti i corsi di questo studente hanno un docente")
+    else: 
+        print(f"Non tutti i corsi di questo studente hanno un docente")

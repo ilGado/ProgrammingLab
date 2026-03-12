@@ -25,3 +25,26 @@ class Docente(ps.Persona):
             
         else:
             print(f"Non frequenti il corso {toRem}")
+            
+    def isProf(self, list):
+        
+        check = True
+        
+        for corso in list:
+            
+            if corso not in self.corsi:
+                
+                check = False
+                break
+            
+        return check
+        
+    def sonoProfessore(self, list):
+        
+        check = self.isProf(list)
+        
+        if check:
+            print(f"{self.nome} {self.cognome} insegna tutti i corsi di questo studente")
+            
+        else:
+            print(f"{self.nome} {self.cognome} non insegna tutti i corsi di questo studente")
