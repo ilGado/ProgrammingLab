@@ -4,7 +4,7 @@ class CSVFile:
     
     def __init__(self, path,  name, content):
         
-        if os.path.exists(path):    
+        if isinstance(path, str) and os.path.exists(path):    
             self.path = path
             self.name = name
             self.content = content
@@ -12,24 +12,30 @@ class CSVFile:
             self.path = None
             self.name = None
             self.content = None
+            
+        
         
     def write(self, toAdd):
         if self.content != None:
             self.content = toAdd
         
-        
-    def getData(self):
-        if self.path != None:
-            toReturn = []
-            
+    
+    def getData(self, start=None, end=None):
+        if self.path is None:
+            return "File given is not valid!"
+
+        toReturn = []
+
+        try:
+            for i in range(start, end + 1):
+                line = self.content[i]   # qui scatta IndexError se fuori range
+                toReturn.append(line.strip().split(','))
+
+        except Exception:
             for line in self.content:
-                
-                toReturn.append(line.replace("\n", "").split(','))
-                
-            
-            return toReturn
-        else:
-            return f"File given is not valid!"
+                toReturn.append(line.strip().split(','))
+
+        return toReturn
     
     
         
